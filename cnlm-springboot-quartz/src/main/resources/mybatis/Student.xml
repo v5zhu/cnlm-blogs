@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="me.cnlm.busi.dao.StudentDao">
+    <insert id="addStudent" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
+        insert into t_b_student(
+        org_id,name,age,grade,phone,address,create_time,update_time,remark
+        )
+        values(
+        #{organization.id},#{name},#{age},#{grade},#{phone},#{address},#{createTime},#{updateTime},#{remark}
+        )
+    </insert>
+</mapper>
