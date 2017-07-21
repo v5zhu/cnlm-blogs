@@ -11,10 +11,10 @@
 ##2. 重命名springboot启动类为Application
 ```
 @(Markdown博客)SpringBootApplication
-public class Application {
+public class me.cnlm.springboot.redis.Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(me.cnlm.springboot.redis.Application.class, args);
 	}
 }
 ```
@@ -47,10 +47,10 @@ Process finished with exit code 1
 resources/application.properties文件加入数据库连接配置：
 ```text
 ## master 数据源配置
-master.datasource.url=jdbc:mysql://localhost:3306/cnlm-blog?useUnicode=true&characterEncoding=utf8
-master.datasource.username=root
-master.datasource.password=123456
-master.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+master.me.cnlm.springboot.redis.datasource.url=jdbc:mysql://localhost:3306/cnlm-blog?useUnicode=true&characterEncoding=utf8
+master.me.cnlm.springboot.redis.datasource.username=root
+master.me.cnlm.springboot.redis.datasource.password=123456
+master.me.cnlm.springboot.redis.datasource.driverClassName=com.mysql.cj.jdbc.Driver
 server.port=22222
 # 配置mapper的扫描，找到所有的mapper.xml映射文件
 mybatis.mapperLocations=classpath:mapper/**/*.xml
@@ -79,7 +79,7 @@ pom.xml文件中加入阿里巴巴开源数据库框架druid的依赖
 ```
 至此，创建一个类用于初始化数据库连接
 ```java
-package me.cnlm.springboot.quartz.datasource;
+package me.cnlm.springboot.quartz.me.cnlm.springboot.redis.datasource;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -92,7 +92,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.jdbc.me.cnlm.springboot.redis.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
 
@@ -106,7 +106,7 @@ import javax.sql.DataSource;
 
 public class MasterDataSourceConfig {
 
-    static final String PACKAGE_DAO = "me.cnlm.springboot.quartz.dao";
+    static final String PACKAGE_DAO = "me.cnlm.springboot.quartz.me.cnlm.springboot.redis.dao";
 
     @Value("${mybatis.mapperLocations}")
     private String mapperLocation;
@@ -114,16 +114,16 @@ public class MasterDataSourceConfig {
     @Value("${mybatis.configLocation}")
     private String configLocation;
 
-    @Value("${master.datasource.url}")
+    @Value("${master.me.cnlm.springboot.redis.datasource.url}")
     private String url;
 
-    @Value("${master.datasource.username}")
+    @Value("${master.me.cnlm.springboot.redis.datasource.username}")
     private String user;
 
-    @Value("${master.datasource.password}")
+    @Value("${master.me.cnlm.springboot.redis.datasource.password}")
     private String password;
 
-    @Value("${master.datasource.driverClassName}")
+    @Value("${master.me.cnlm.springboot.redis.datasource.driverClassName}")
     private String driverClass;
 
     @Bean(name = "masterDataSource")

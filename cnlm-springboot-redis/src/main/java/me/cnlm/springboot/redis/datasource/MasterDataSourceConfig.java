@@ -1,4 +1,4 @@
-package me.cnlm.springboot.quartz.datasource;
+package me.cnlm.springboot.redis.datasource;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -33,16 +33,16 @@ public class MasterDataSourceConfig {
     @Value("${mybatis.configLocation}")
     private String configLocation;
 
-    @Value("${master.datasource.url}")
+    @Value("${master.me.cnlm.springboot.redis.datasource.url}")
     private String url;
 
-    @Value("${master.datasource.username}")
+    @Value("${master.me.cnlm.springboot.redis.datasource.username}")
     private String user;
 
-    @Value("${master.datasource.password}")
+    @Value("${master.me.cnlm.springboot.redis.datasource.password}")
     private String password;
 
-    @Value("${master.datasource.driverClassName}")
+    @Value("${master.me.cnlm.springboot.redis.datasource.driverClassName}")
     private String driverClass;
 
     @Bean(name = "masterDataSource")

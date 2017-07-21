@@ -39,7 +39,7 @@
     environments?, databaseIdProvider?, mappers?
 -->
     <typeAliases>
-        <package name="me.cnlm.springboot.quartz.me.cnlm.springboot.redis.entity"/>
+        <package name="me.cnlm.springboot.redis.entity"/>
     </typeAliases>
     <plugins>
         <!--<plugin interceptor="me.cnlm.core.interceptors.LeebaoMybatisInterceptor"/>-->
