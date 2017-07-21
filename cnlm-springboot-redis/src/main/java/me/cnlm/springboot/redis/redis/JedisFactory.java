@@ -1,5 +1,6 @@
-package me.cnlm.springboot.redis.utils;
+package me.cnlm.springboot.redis.redis;
 
+import me.cnlm.springboot.redis.config.RedisConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
@@ -12,16 +13,16 @@ import java.util.Map;
 /**
  * Created by zhuxl@paxsz.com on 2017/7/21.
  */
-public class JedisUtils {
+public class JedisFactory {
     private Logger logger = LoggerFactory.getLogger(this.getClass().getName());
 
-    private JedisUtils(){}
+    private JedisFactory(){}
 
     private static class RedisUtilHolder{
-        private static final JedisUtils instance = new JedisUtils();
+        private static final JedisFactory instance = new JedisFactory();
     }
 
-    public static JedisUtils getInstance(){
+    public static JedisFactory getInstance(){
         return RedisUtilHolder.instance;
     }
 
@@ -33,13 +34,13 @@ public class JedisUtils {
         if(!maps.containsKey(key))
         {
             JedisPoolConfig config = new JedisPoolConfig();
-            config.setMaxActive(RedisConfig.MAX_ACTIVE);
-            config.setMaxIdle(RedisConfig.MAX_IDLE);
-            config.setMaxWait(RedisConfig.MAX_WAIT);
+            config.setMaxTotal(RedisConfig.POOL_MAX_ACTIVE);
+            config.setMaxIdle(RedisConfig.POOL_MAX_IDLE);
+            config.setMaxWaitMillis(RedisConfig.POOL_MAX_WAIT);
             config.setTestOnBorrow(true);
             config.setTestOnReturn(true);
 
-            pool = new JedisPool(config,ip,port,RedisConfig.TIMEOUT);
+            pool = new JedisPool(config,ip,port,RedisConfig.POOL_TIMEOUT);
             maps.put(key, pool);
         }
         else
