@@ -27,7 +27,7 @@
         <!--开启驼峰命名转换Table:create_time到 Entity(createTime)-->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
         <!--日志记录-->
-        <setting name="logPrefix" value="me.cnlm.springboot.redis.dao."/>
+        <setting name="logPrefix" value="dao."/>
 
     </settings>
     <!--
@@ -39,7 +39,7 @@
     environments?, databaseIdProvider?, mappers?
 -->
     <typeAliases>
-        <package name="me.cnlm.springboot.quartz.me.cnlm.springboot.redis.entity"/>
+        <package name="me.cnlm.springboot.quartz.entity"/>
     </typeAliases>
     <plugins>
         <!--<plugin interceptor="me.cnlm.core.interceptors.LeebaoMybatisInterceptor"/>-->

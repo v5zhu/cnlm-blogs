@@ -20,6 +20,8 @@
         <module>cnlm-utils</module>
         <module>cnlm-springboot-quartz</module>
         <module>cnlm-springboot-redis</module>
+        <module>cnlm-commons</module>
+        <module>cnlme-mail-service</module>
     </modules>
 
     <properties>

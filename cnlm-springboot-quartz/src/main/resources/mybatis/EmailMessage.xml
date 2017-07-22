@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="me.cnlm.springboot.quartz.dao.EmailMessageDao">
+    <select id="scanForSending"  resultType="EmailMessage">
+        select em.*
+        from t_b_email_message em
+        where em.status=1
+    </select>
+    <update id="sendSuccessfully" parameterType="long">
+        update t_b_email_message
+        <set>
+            status=2
+        </set>
+        where id=#{arg0}
+    </update>
+</mapper>

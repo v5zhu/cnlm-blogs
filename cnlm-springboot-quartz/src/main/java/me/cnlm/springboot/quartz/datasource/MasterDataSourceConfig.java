@@ -25,7 +25,7 @@ import javax.sql.DataSource;
 
 public class MasterDataSourceConfig {
 
-    static final String PACKAGE_DAO = "me.cnlm.springboot.quartz.me.cnlm.springboot.redis.dao";
+    static final String PACKAGE_DAO = "me.cnlm.springboot.quartz.dao";
 
     @Value("${mybatis.mapperLocations}")
     private String mapperLocation;
