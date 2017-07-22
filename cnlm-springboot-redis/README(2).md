@@ -1,4 +1,4 @@
-#Springboot Redis分布式集群（1）- 搭建工程引入redis
+#Springboot Redis分布式集群（2）- 搭建工程引入redis
 
 @(Markdown博客)
 
