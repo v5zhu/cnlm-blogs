@@ -22,6 +22,8 @@
         <module>cnlm-springboot-redis</module>
         <module>cnlm-commons</module>
         <module>cnlme-mail-service</module>
+        <module>cnlm-springboot-quartz-restful</module>
+        <module>cnlm-exception</module>
     </modules>
 
     <properties>
