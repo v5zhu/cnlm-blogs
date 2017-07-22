@@ -19,7 +19,6 @@ public class RedisTest {
     @Test
     public void testRedis(){
         Jedis jedis= JedisFactory.getInstance().getJedis(RedisConfig.HOST,RedisConfig.PORT);
-        String isok=jedis.set("phone","1388***8929");
-        System.out.println("存储结果:"+isok);
+        System.out.println("存储结果:"+jedis.get("phone"));
     }
 }
