@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by LONG on 2017/7/8.
+ * Created by cnlm.me@qq.com on 2017/7/8.
  */
 @Configuration
 public class EmailJobTrigger {
@@ -21,12 +21,6 @@ public class EmailJobTrigger {
     @Value("${quartz.cron.email.message.send}")
     public String quartz_cron_email_message_send;
 
-
-    /**
-     * 生成二维码
-     *
-     * @return
-     */
     @Bean
     public JobDetailFactoryBean sendEmailJobDetail() {
         JobDetailFactoryBean factoryBean = new JobDetailFactoryBean();
