@@ -9,8 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cnlm-springboot-quartz-restful</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>cnlm-springmvc-quartz-console-consumer</artifactId>
+
+    <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>me.cnlm</groupId>
@@ -23,21 +24,9 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>2.25.1</version>
+            <groupId>me.cnlm</groupId>
+            <artifactId>cnlm-springboot-quartz-restful-provider</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.media</groupId>
-            <artifactId>jersey-media-json-jackson</artifactId>
-            <version>2.25.1</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.containers/jersey-container-servlet-core -->
-        <dependency>
-            <groupId>org.glassfish.jersey.containers</groupId>
-            <artifactId>jersey-container-servlet-core</artifactId>
-            <version>2.25.1</version>
-        </dependency>
-
     </dependencies>
 </project>
