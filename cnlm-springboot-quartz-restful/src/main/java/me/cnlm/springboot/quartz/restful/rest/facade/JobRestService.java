@@ -63,7 +63,6 @@ public class JobRestService {
         if (!verified) {
             return Response.status(Response.Status.BAD_REQUEST).entity(Res.failure("cron表达式有误，不能被解析！")).build();
         }
-
         Object obj = null;
         try {
             if (StringUtils.isNotBlank(scheduleJob.getSpringId())) {
@@ -83,7 +82,6 @@ public class JobRestService {
 
                 if (method == null) {
                     return Response.status(Response.Status.BAD_REQUEST).entity(Res.failure("未找到目标方法！")).build();
-
                 }
                 taskService.addTask(scheduleJob);
             }
