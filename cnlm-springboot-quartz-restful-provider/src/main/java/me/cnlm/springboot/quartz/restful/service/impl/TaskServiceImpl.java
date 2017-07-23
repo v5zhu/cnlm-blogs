@@ -1,5 +1,6 @@
 package me.cnlm.springboot.quartz.restful.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import me.cnlm.exception.CoreException;
@@ -14,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
+import org.springframework.stereotype.Component;
 import org.springside.modules.mapper.BeanMapper;
 
 import javax.annotation.PostConstruct;
@@ -29,8 +31,11 @@ import java.util.Set;
  * @date 2015年4月20日 下午2:43:54
  */
 @SuppressWarnings("SpringJavaAutowiringInspection")
+@Service(version = "1.0")
+@Component
 public class TaskServiceImpl implements TaskService {
     public final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     private SchedulerFactoryBean schedulerFactoryBean;
 

@@ -27,15 +27,15 @@
 		parameterType="java.lang.Long">
 		select
 		<include refid="Base_Column_List" />
-		from task_schedule_job
+		from t_b_schedule_job
 		where job_id = #{jobId,jdbcType=BIGINT}
 	</select>
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-		delete from task_schedule_job
+		delete from t_b_schedule_job
 		where job_id = #{jobId,jdbcType=BIGINT}
 	</delete>
 	<insert id="insert" parameterType="ScheduleJob">
-		insert into task_schedule_job (job_id, create_time, update_time,
+		insert into t_b_schedule_job (job_id, create_time, update_time,
 		job_name, job_group, job_status,
 		cron_expression, description, bean_class,
 		is_concurrent, spring_id, method_name
@@ -49,7 +49,7 @@
 		)
 	</insert>
 	<insert id="insertSelective" parameterType="ScheduleJob">
-		insert into task_schedule_job
+		insert into t_b_schedule_job
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			<if test="jobId != null">
 				job_id,
@@ -128,7 +128,7 @@
 		</trim>
 	</insert>
 	<update id="updateByPrimaryKeySelective" parameterType="ScheduleJob">
-		update task_schedule_job
+		update t_b_schedule_job
 		<set>
 			<if test="createTime != null">
 				create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -167,7 +167,7 @@
 		where job_id = #{jobId,jdbcType=BIGINT}
 	</update>
 	<update id="updateByPrimaryKey" parameterType="ScheduleJob">
-		update task_schedule_job
+		update t_b_schedule_job
 		set create_time = #{createTime,jdbcType=TIMESTAMP},
 		update_time = #{updateTime,jdbcType=TIMESTAMP},
 		job_name = #{jobName,jdbcType=VARCHAR},
@@ -184,12 +184,12 @@
 	<select id="getAll" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />
-		from task_schedule_job
+		from t_b_schedule_job
 	</select>
     <select id="getTaskByContent" resultMap="BaseResultMap" parameterType="java.lang.String">
         select
         <include refid="Base_Column_List"/>
-        from task_schedule_job
+        from t_b_schedule_job
         where job_name LIKE CONCAT('%',#{jobName,jdbcType=VARCHAR},'%')
     </select>
 </mapper>

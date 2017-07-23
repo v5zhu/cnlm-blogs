@@ -1,5 +1,6 @@
 package me.cnlm.springboot.quartz.restful.rest.facade;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
 import me.cnlm.commons.response.Res;
 import me.cnlm.exception.CoreException;
@@ -24,7 +25,7 @@ import java.lang.reflect.Method;
 @Service
 public class JobRestService {
 
-    @Autowired
+    @Reference(version = "1.0")
     private TaskService taskService;
 
     @GET

@@ -21,7 +21,7 @@
         <module>cnlm-springboot-quartz</module>
         <module>cnlm-springboot-redis</module>
         <module>cnlm-commons</module>
-        <module>cnlme-mail-service</module>
+        <module>cnlm-email-service</module>
         <module>cnlm-springboot-quartz-restful-provider</module>
         <module>cnlm-exception</module>
         <module>cnlm-springmvc-quartz-console-consumer</module>
