@@ -14,6 +14,11 @@
     <dependencies>
         <dependency>
             <groupId>me.cnlm</groupId>
+            <artifactId>cnlm-commons</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>me.cnlm</groupId>
             <artifactId>cnlm-exception</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
