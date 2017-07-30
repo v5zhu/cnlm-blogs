@@ -13,5 +13,5 @@
     <dubbo:registry address="zookeeper://120.77.172.143:2181"/>
 
     <dubbo:reference id="taskService" interface="me.cnlm.springboot.quartz.restful.service.TaskService"
-                     protocol="dubbo"/>
+                     protocol="dubbo" version="1.0"/>
 </beans>

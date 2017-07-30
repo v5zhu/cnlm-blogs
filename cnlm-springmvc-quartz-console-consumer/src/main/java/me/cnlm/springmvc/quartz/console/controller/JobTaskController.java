@@ -1,22 +1,14 @@
 package me.cnlm.springmvc.quartz.console.controller;
 
-import com.alibaba.dubbo.config.annotation.Reference;
-import com.github.pagehelper.PageInfo;
-import me.cnlm.commons.response.Res;
-import me.cnlm.exception.CoreException;
-import me.cnlm.springboot.quartz.restful.entity.ScheduleJob;
 import me.cnlm.springboot.quartz.restful.service.TaskService;
-import me.cnlm.springboot.quartz.restful.utils.SpringUtils;
-import org.apache.commons.lang.StringUtils;
+import me.cnlm.springmvc.quartz.console.service.ConsumerTaskService;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.NoSuchBeanDefinitionException;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.Method;
 
 @SuppressWarnings("ALL")
 @Controller
@@ -25,13 +17,14 @@ public class JobTaskController {
     // 日志记录器
     public final Logger logger = Logger.getLogger(this.getClass());
 
-    @Reference(version = "1.0")
+    @Autowired
     private TaskService taskService;
 
     @RequestMapping("tasks")
     public String taskList(HttpServletRequest request, @RequestParam(value = "name", defaultValue = "") String name,
                            @RequestParam(value = "page", defaultValue = "1") int page) {
-        PageInfo<ScheduleJob> PageInfo = null;
+        taskService.getAllJob();
+        /*PageInfo<ScheduleJob> PageInfo = null;
         int pageSize = 10;
         try {
             if (StringUtils.isBlank(name)) {
@@ -43,11 +36,11 @@ public class JobTaskController {
         } catch (CoreException e) {
             e.printStackTrace();
         }
-        request.setAttribute("taskPage", PageInfo);
+        request.setAttribute("taskPage", PageInfo);*/
         return "task/taskList";
     }
 
-    @RequestMapping(value = "task", method = RequestMethod.POST)
+    /*@RequestMapping(value = "task", method = RequestMethod.POST)
     @ResponseBody
     public ResponseEntity<Object> taskList(@RequestBody ScheduleJob scheduleJob) {
         Boolean verified = null;
@@ -170,5 +163,5 @@ public class JobTaskController {
 
         taskService.delTaskById(jobId);
         return new ResponseEntity<Object>(Res.success(), HttpStatus.OK);
-    }
+    }*/
 }
