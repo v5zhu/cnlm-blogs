@@ -25,11 +25,7 @@ import java.util.List;
 import java.util.Set;
 
 
-/**
- * @author wei9.li@changhong.com
- * @Description: 计划任务管理
- * @date 2015年4月20日 下午2:43:54
- */
+
 @SuppressWarnings("SpringJavaAutowiringInspection")
 @Service(version = "1.0")
 @Component

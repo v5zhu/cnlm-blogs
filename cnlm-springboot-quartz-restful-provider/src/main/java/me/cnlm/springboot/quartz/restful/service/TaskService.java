@@ -7,9 +7,7 @@ import me.cnlm.springboot.quartz.restful.entity.ScheduleJob;
 
 import java.util.List;
 
-/**
- * Created by wei9.li@changhong.com on 2015/4/20.
- */
+
 public interface TaskService {
 
     /**

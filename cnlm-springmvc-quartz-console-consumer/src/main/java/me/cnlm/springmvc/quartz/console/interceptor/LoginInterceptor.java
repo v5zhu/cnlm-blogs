@@ -84,49 +84,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         //提取并封装参数
         String baseString = oauth[1] + "&" + oauth[2]
                 + "&" + oauth[4] + "&" + oauth[5] + "&" + oauth[6];
-        //从map中取得apiKey
-        //todo 为后续使用Redis准备
-        /*if (ak != null && (com.changhong.olive.oauth = sign.split("\\:")).length == 5) {
-            String flag = com.changhong.olive.oauth[0];
-
-            char[] flags = flag.toCharArray();
-
-            //校验flag
-            if (flag.length() < 4) {
-                response.setStatus(401);
-                return false;
-            }
-
-            String ak = com.changhong.olive.oauth[1];
-            String signature = com.changhong.olive.oauth[2];
-            String timestamp = com.changhong.olive.oauth[3];
-            String nonce = com.changhong.olive.oauth[4];
-            logger.info("sign: " + sign);
-
-            //congRedis获取appSecret
-            Key app = appService.getApp(ak);
-
-            //TODO 如果为空从mysql数据库获取并添加到redis数据库
-
-            //app == null，用户未注册
-            if (app == null) {
-                response.setStatus(401);
-                return false;
-            } else {
-                //TODO 计算Content
-                StringBuffer content = new StringBuffer();
-
-                //TODO 计算签名
-                //TODO 比较签名
-                return false;
-            }
-        } else {
-            logger.error("error: " + ECodeUtil.getInterfaceError("sign_is_null").toString());
-            response.setStatus(401);
-            return false;
-
-        }*/
-        //获取签名
+        
         return true;
     }
 
